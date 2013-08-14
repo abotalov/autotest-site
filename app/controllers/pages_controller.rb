@@ -1,6 +1,23 @@
 class PagesController < ApplicationController
 
   def index
+    nightly_tests
+    respond_to do |format|
+     format.html {}
+     format.js
+    end
+  end
+
+  def nightly_tests
+    if params[:theDate]
+      @folder = params[:theDate]
+    else
+      @folder = "#{Time.now.year}-#{Time.now.month}-#{Time.now.day}"
+    end
+  end
+
+  def update_manual
+    render :partial => 'manual_tests'
   end
 
   def run_test

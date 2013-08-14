@@ -1,11 +1,10 @@
-%label
-  Additional settings:
-
 = simple_form_for :environment, url: update_code_path, method: :post do |f|
   = simple_fields_for :test do |sf|
-    = sf.select :tag, Tag.all.map(&:name)
+    %div.row
+      %label
+        = 'Additional settings:'
+      = sf.select :tag, Tag.all.map(&:name)
 
-    %div
   = f.submit 'Update'
 
 = simple_form_for :update_test, url: update_test_path do |f|

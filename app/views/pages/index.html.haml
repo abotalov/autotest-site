@@ -1,15 +1,21 @@
-%div{style: 'float: left', width: '28%'}
-  %div
-    = render partial: 'run_test'
+= form_for(@folder, remote: true, id:'dateform') do |f|
+  %label
+    = 'Reports for:'
+  %input{type: "text", id: "theDate", name: "theDate", value: @folder }
+  %input{type: 'button', value: 'Date', onclick: "displayCalendar(document.forms[0].theDate,'yyyy-mm-dd',this)"}
+  = f.submit("View Reports")
 
-  %hr  
-  %div{style: 'padding-left: 10px;'}
-    = render partial: 'update_code'
-    
+%div{id: 'left_section'}
+
+  = render partial: 'run_test'
   %hr
-  %div
-    = render partial: 'stop_test'
-
-.report
-  %iframe.listreport{scrolling: 'auto', src: 'list'}
-
+  %div{style: 'height:21px'}
+    %a.row{id: 'upd_label', style: 'margin-left: 25%; margin-bottom:2%', class: 'linkbutton', href: '#', onclick:"return false;"}
+      = 'Update reports list'
+  %hr
+  = render partial: 'update_code'
+  %hr
+  = render partial: 'stop_test'
+%div.report
+  = render partial: 'nightly_tests'
+  = render partial: 'manual_tests'

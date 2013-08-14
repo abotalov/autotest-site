@@ -12,4 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require_tree
+// .
+$(document).ready(function () {
+    $("#upd_label").click(function () {
+        $('#recent').fadeTo('fast', 0.4);
+        $.get('/update_manual',function (data) {
+            $('#recent').html(data);
+        }).done(function () {
+                $('#recent').fadeTo('fast', 1);
+            });
+
+    });
+});

@@ -1,0 +1,14 @@
+%div#nightly
+  = "Nightly tests:"
+  %ol
+    - begin
+      - Dir.new("#{Rails.root}/public/tests/#{@folder}").each do |x|
+        - unless x[/.*\.erb/].nil?
+          %li
+            = link_to x.humanize[0..-5], nightly_path(x, folder: @folder), target: '_blank'
+            - test_statistic(x, @folder)[:labels].include?('failed') ? color = 'firebrick' : color = 'green'
+            %label{style: "float: right; color: #{color}"}
+              = test_statistic(x, @folder)[:labels]
+              = test_statistic(x, @folder)[:finish_status]
+    - rescue
+

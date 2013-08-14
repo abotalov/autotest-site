@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#dateform {
+  float: right;
+}
+
 .pages {
   background: url("bg-top-nav.png") repeat scroll 0 0 black;
 }
@@ -58,8 +62,12 @@ html, body, div {
   background-color: #FFFFFF;
   border-top: 1px solid #FFFFFF;
   position: relative;
-  min-height: 645px;
   padding-bottom: 1px;
+}
+
+.main_content>form{
+  min-width: 910px;
+  margin: 10px 0px 10px 0px;
 }
 
 .main_content_create {
@@ -93,16 +101,16 @@ html, body, div {
 }
 
 .report {
-  float: right; 
-  padding-top: 20px; 
+  float: left;
   border-left: 1px solid gray; 
-  width: 70%; 
-  height: 580px; 
+  width: 75%;
   padding-left: 10px;
+  min-height: 485px;
+  padding-top: 10px;
 }
 
 .listreport {
-  width: 95%; 
+  width: 100%;
   height: 95%; 
   border: medium none;
 }
@@ -180,4 +188,39 @@ table tr {
 .log {
   float: right;
   font-size: 15px;
+}
+
+#nightly {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px;
+  border-color: lavenderblush;
+  border-style: inset;
+  padding: 5px;
+  background-color: #F2F2F2;
+}
+
+#left_section{
+  float: left;
+  max-width: 212px;
+  width: 27%;
+}
+
+#left_section .row{
+  margin: 5px;
+}
+
+#left_section .row select{
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.date {
+  font-size: 10px;
+  margin: 0 5px 0 5px;
+}
+
+#recent li {
+  background-color: #F2F2F2;
+  margin-bottom: 5px;
 }

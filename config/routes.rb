@@ -1,6 +1,6 @@
 AutomatedTestSite::Application.routes.draw do
   resource :timetables, only: [:edit, :update]
-  resources :pages
+
   resources :environments
 
   match '/run_test' => 'pages#run_test', as: :run_test
@@ -8,6 +8,7 @@ AutomatedTestSite::Application.routes.draw do
   post '/update_code' => 'pages#update_code', as: :update_code
   post '/update_test' => 'pages#update_test', as: :update_test
   post '/update_tag' => 'pages#update_tag', as: :update_tag
+  get '/update_manual' => 'pages#update_manual'
   match '/stop' => 'pages#stop_test', as: :stop_test
   match '/list' => 'list#index'
   match '/show/:id' => 'list#show', as: :show_report

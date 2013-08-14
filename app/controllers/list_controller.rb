@@ -2,7 +2,6 @@ class ListController < ApplicationController
   layout false
 
   def index
-    @folder = "#{Time.now.year}-#{Time.now.month}-#{Time.now.day}"
   end
 
   def show
@@ -15,9 +14,4 @@ class ListController < ApplicationController
     render "%s/%s/%s/%s" % [Rails.root, Autotest::CONFIG.test_folder, params[:folder], report], layout: false
   end
 
-  def reports
-    @folder = params[:theDate]
-    render :index
-  end
-  
 end

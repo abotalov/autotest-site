@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+
+.linkbutton {
+  font-size: 13px;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: black;
+  padding: 2px 6px 2px 6px;
+  border: 1px solid darkgrey;
+  color: a;
+}
+
+.linkbutton:hover{
+  color:  grey;
+}
+
+.linkbutton:active{
+  color: #F2F2F2;
+}

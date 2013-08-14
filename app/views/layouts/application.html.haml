@@ -5,6 +5,8 @@
       = Autotest::CONFIG.title
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
+    -#%script{type:'text/javascript', scr:'jquery-2.0.3.min.js'}
+    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
     
   %body.pages
     .header
@@ -26,8 +28,8 @@
               = render partial: 'tab_menu', locals: {tab_menu: tab_menu}              
 
             = yield
-
-    %div{style: 'padding-bottom: 80px'}
-      .footer
-        .bottom_footer
+            %div{style: 'width:1000px; float:none; clear:both'}
+      %div{style: 'padding-bottom: 80px'}
+        .footer
+          .bottom_footer
               
