@@ -1,23 +1,20 @@
 class PagesController < ApplicationController
 
   def index
-    nightly_tests
-    respond_to do |format|
-     format.html {}
-     format.js
-    end
-  end
-
-  def nightly_tests
     if params[:theDate]
       @folder = params[:theDate]
     else
       @folder = "#{Time.now.year}-#{Time.now.month}-#{Time.now.day}"
     end
+    respond_to do |format|
+     format.html
+     format.js
+    end
   end
 
+
   def update_manual
-    render :partial => 'manual_tests'
+    render partial: 'manual_tests'
   end
 
   def run_test
@@ -32,7 +29,7 @@ class PagesController < ApplicationController
     File.delete(path_to_test) if FileTest.exists?(path_to_test)
     File.new(path_to_test, 'a')
 
-    if Environment.all.map(&:name).include? host      
+    if Environment.all.map(&:name).include? host
       system("rake auto_test:separate_test P=#{test} HOST=#{host} &")
     end
 

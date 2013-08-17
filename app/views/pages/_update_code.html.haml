@@ -5,12 +5,12 @@
         = 'Additional settings:'
       = sf.select :tag, Tag.all.map(&:name)
 
-  = f.submit 'Update'
+  = f.submit 'Update Code'
 
 = simple_form_for :update_test, url: update_test_path do |f|
-  = f.hint 'Update Tests:'
+  = f.hint 'Tests List:'
   = f.submit 'Update'
 
 = simple_form_for :update_tag, url: update_tag_path do |f|
-  = f.hint 'Update Tags:'
+  = f.hint 'Tags List:'
   = f.submit 'Update'

@@ -1,4 +1,8 @@
-= form_for(@folder, remote: true, id:'dateform') do |f|
+= if (error_message ||= nil)
+  = content_tag(:span, error_message, :class => :error_message)
+
+
+= form_for(@folder, remote: true, html:{id:'dateform'}) do |f|
   %label
     = 'Reports for:'
   %input{type: "text", id: "theDate", name: "theDate", value: @folder }
@@ -8,14 +12,21 @@
 %div{id: 'left_section'}
 
   = render partial: 'run_test'
-  %hr
-  %div{style: 'height:21px'}
-    %a.row{id: 'upd_label', style: 'margin-left: 25%; margin-bottom:2%', class: 'linkbutton', href: '#', onclick:"return false;"}
-      = 'Update reports list'
+
   %hr
   = render partial: 'update_code'
   %hr
+    %div{style: 'height:21px'}
+      %a.row{id: 'upd_label', style: 'margin-left: 25%; margin-bottom:2%', class: 'linkbutton', href: '#', onclick:"return false;"}
+        = 'Update reports list'
+
+  %hr
   = render partial: 'stop_test'
+
+
+
 %div.report
   = render partial: 'nightly_tests'
   = render partial: 'manual_tests'
+
+

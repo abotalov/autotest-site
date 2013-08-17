@@ -22,6 +22,8 @@ $(document).ready(function () {
         }).done(function () {
                 $('#recent').fadeTo('fast', 1);
             });
-
+    });
+    $("#dateform").submit(function(){
+        $("#nightly").fadeTo('fast', 0.4);
     });
 });

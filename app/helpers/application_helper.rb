@@ -6,5 +6,9 @@ module ApplicationHelper
       {url: edit_timetables_path, text: 'TimeTable', active: params[:controller] == 'timetables'},
     ]
   end
+
+  def print_rep(rep)
+    rep.humanize[0..-5]
+  end
   
 end
