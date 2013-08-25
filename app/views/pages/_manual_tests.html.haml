@@ -4,7 +4,7 @@
     - manual_tests_sorted.each do |test_info|
       %div.date= test_info[0]
       %li
-        = link_to test_info[1].humanize[0..-5], nightly_path(test_info[1], folder: '/'), target: '_blank'
+        = link_to test_info[1].humanize[0..-5], show_report_path(test_info[1], folder: '/'), target: '_blank'
         - test_statistic(test_info[1], '/')[:labels].include?('failed') ? color = 'firebrick' : color = 'green'
         %label{style: "float: right; color: #{color}"}
           = test_statistic(test_info[1], '/')[:labels]

@@ -7,7 +7,7 @@ export RUBY_HEAP_FREE_MIN=500000
 
 # setup gemset 
 # rvm use ruby-1.9.3-p194@sophia 
-rvm use ruby-1.9.3-p194-perf@automated-test-site --create 
+rvm use ruby-1.9.3-p194-perf@automated-test-site2 --create
 
 # add Rails.root/bin on the top of $PATH 
 [ -d './bin' ] && export PATH=`pwd`/bin:$PATH

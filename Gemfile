@@ -38,9 +38,9 @@ gem 'daemons'
 
 #For Automated Tests
 
-gem 'cucumber'
+gem 'cucumber', '1.2.1'
 gem 'capybara', git: 'https://github.com/AlexKlim/capybara.git', branch: '1.1_stable'
-gem 'selenium-webdriver'
+gem 'selenium-webdriver', '2.33.0'
 gem 'gherkin'
 gem 'rmail'
 gem 'rspec'
@@ -54,3 +54,5 @@ gem 'autotest-users', git: 'https://github.com/AlexKlim/autotest-users.git'
 gem 'autotest-email', git: 'https://github.com/AlexKlim/autotest-email.git'
 gem 'cucumber_spinner'
 gem 'randexp'
+gem 'nokogiri'
+gem 'cucumber-helper', git: 'https://github.com/ALwarecorp/cucumber-helper'
