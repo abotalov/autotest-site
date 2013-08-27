@@ -16,5 +16,7 @@
 tmp/
 .DS_Store
 config/config.yml
+Gemfile.lock
+.sass-cache
 
 

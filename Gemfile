@@ -38,7 +38,7 @@ gem 'daemons'
 
 #For Automated Tests
 
-gem 'cucumber', '1.2.1'
+gem 'cucumber', '1.3.2'
 gem 'capybara', git: 'https://github.com/AlexKlim/capybara.git', branch: '1.1_stable'
 gem 'selenium-webdriver', '2.33.0'
 gem 'gherkin'
