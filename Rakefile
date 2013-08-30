@@ -53,7 +53,7 @@ namespace :auto_test do
   end
 
   task create_report: :environment do
-    folder = "%s/%s/%s" % [Rails.root, Autotest::CONFIG.test_folder, "#{Time.now.year}-#{Time.now.month}-#{Time.now.day}"]
+    folder = "%s/%s/%s" % [Dir.pwd, Autotest::CONFIG.test_folder, "#{Time.now.year}-#{Time.now.month}-#{Time.now.day}"]
     Dir.mkdir folder
     path = File.expand_path(Autotest::CONFIG.auto_test)
     Dir.new(path).each do |x|
