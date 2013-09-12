@@ -18,6 +18,6 @@ class Timetable < ActiveRecord::Base
 
   private
   def self.update_cron
-    system 'bundle exec whenever --update-crontab AutomatedTestSite'
+    system 'RAILS_ENV=production bundle exec whenever --update-crontab AutomatedTestSite'
   end
 end

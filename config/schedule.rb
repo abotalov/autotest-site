@@ -11,11 +11,11 @@ Timetable.all.each do |tt|
 
 end
 
-every :day, at: '9:01pm' do
+every :day, at: '6:01pm' do
   rake 'auto_test:remove_tests'
 end
 
-every :day, at: '9:03pm' do
+every :day, at: '6:03pm' do
   rake 'update:code'
 end
 
