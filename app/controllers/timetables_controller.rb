@@ -2,7 +2,7 @@ class TimetablesController < ApplicationController
 
   before_filter :init
 
-  def edit  
+  def edit
     @timetables_set.timetables = Timetable.all
   end
 
@@ -10,6 +10,7 @@ class TimetablesController < ApplicationController
     @timetables_set.save!
     Timetable.send_cron_later    
     redirect_to edit_timetables_path
+    system "cd #{Rails.root} && RAILS_ENV=production bundle exec whenever --update-crontab AutomatedTestSite"
   end
 
   private
