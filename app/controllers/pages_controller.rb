@@ -14,6 +14,12 @@ class PagesController < ApplicationController
 
 
   def update_manual
+    #system("cp #{Autotest::CONFIG.auto_test}/*.erb #{Rails.root}/#{Autotest::CONFIG.test_folder}")
+    render partial: 'manual_tests'
+  end
+
+  def delete_manual
+    File.delete("#{Rails.root}/public/tests/#{params[:filename]}")
     render partial: 'manual_tests'
   end
 

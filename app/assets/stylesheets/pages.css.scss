@@ -109,6 +109,26 @@ html, body, div {
   padding-top: 10px;
 }
 
+img.update {
+   margin-bottom: -3px;
+}
+
+img.update:hover {
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -webkit-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+
+img.update:active {
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -webkit-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+
 .listreport {
   width: 100%;
   height: 95%; 

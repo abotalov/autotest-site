@@ -15,18 +15,18 @@
 
   %hr
   = render partial: 'update_code'
-  %hr
-    %div{style: 'height:21px'}
-      %a.row{id: 'upd_label', style: 'margin-left: 25%; margin-bottom:2%', class: 'linkbutton', href: '#', onclick:"return false;"}
-        = 'Update reports list'
+  -#%hr
+  -#  %div{style: 'height:21px'}
+      -#%a.row{id: 'upd_label', style: 'margin-left: 25%; margin-bottom:2%', class: 'linkbutton', href: '#', onclick:"return false;"}
+      -#  = 'Update reports list'
 
   %hr
   = render partial: 'stop_test'
 
-
-
 %div.report
   = render partial: 'nightly_tests'
+  = "Manual started tests"
+  = image_tag 'update.png', style: 'cursor: pointer', class: 'update'
   = render partial: 'manual_tests'
 
 

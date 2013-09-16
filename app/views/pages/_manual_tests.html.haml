@@ -1,10 +1,11 @@
 %div#recent
-  = "Manual started tests:"
   %ol
     - manual_tests_sorted.each do |test_info|
-      %div.date= test_info[0]
       %li
+        %div.date= test_info[0]
+        = image_tag 'delete.png', style: 'cursor:pointer', filename: test_info[1], class: 'delete'
         = link_to test_info[1].humanize[0..-5], show_report_path(test_info[1], folder: '/'), target: '_blank'
+
         - test_statistic(test_info[1], '/')[:labels].include?('failed') ? color = 'firebrick' : color = 'green'
         %label{style: "float: right; color: #{color}"}
           = test_statistic(test_info[1], '/')[:labels]

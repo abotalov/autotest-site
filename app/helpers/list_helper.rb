@@ -19,7 +19,5 @@ module ListHelper
     {labels: labels, finish_status: finish_status}
   end
 
-  def modified_date(file)
-    File.mtime("#{Rails.root}/public/tests/#{file}").to_s.scan(/^.+\s.+\s/)[0]
-  end
+
 end

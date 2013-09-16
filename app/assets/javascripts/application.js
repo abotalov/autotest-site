@@ -15,7 +15,7 @@
 //= require_tree
 // .
 $(document).ready(function () {
-    $("#upd_label").click(function () {
+    $("img.update").on('click',function () {
         $('#recent').fadeTo('fast', 0.4);
         $.get('/update_manual',function (data) {
             $('#recent').html(data);
@@ -26,4 +26,12 @@ $(document).ready(function () {
     $("#dateform").submit(function(){
         $("#nightly").fadeTo('fast', 0.4);
     });
+
+
 });
+
+
+$(document).on("click", "img.delete", function(){
+    $.post('/delete_manual', {filename:$(this).attr('filename')});
+    $(this).parent().fadeOut()
+} );
