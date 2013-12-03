@@ -49,7 +49,10 @@ namespace :auto_test do
 
   task run: :environment do
     run_task = (ENV['P'] == 'smokeForTesters' ? 'smoke_for_testers' : "cucumber_test P=#{ENV['P']}")
-    system("cd #{Autotest::CONFIG.auto_test} && rake #{run_task} HOST=#{ENV['HOST']}")
+    command = "cd #{Autotest::CONFIG.auto_test} && rvm ruby-2.0.0-p353@sophia-automated-test exec rake #{run_task} HOST=#{ENV['HOST']}"
+    Bundler.with_clean_env do
+      system(command)
+    end
   end
 
   task create_report: :environment do
